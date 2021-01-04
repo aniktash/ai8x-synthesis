@@ -975,14 +975,21 @@ def load(
     if error_exit:
         sys.exit(1)
 
-    if verbose:
+
+    if True:#verbose:
         with np.printoptions(threshold=np.inf, linewidth=80):
+           # bias[0] = [0]
+           # bias[1] = [0, 0, 1]
+            print(bias[0])
+            print(bias[1])
             print("\nSUMMARY\n=======")
             print(layers, "layers\n")
             print("weights:")
             print(weights)
             print("bias:")
             print(bias)
+            print("output shift:")
+            print(output_shift)
             print("fc_weights:")
             print(fc_weights)
             print("fc_bias:")

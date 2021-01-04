@@ -2229,7 +2229,7 @@ def main():
 
     # Load configuration file
     cfg, cfg_layers, params = yamlcfg.parse(args.config_file, args.stop_after, args.device)
-
+    print('Parsed outputshift: ',params['output_shift'])
     # If not using test data, load weights and biases
     # This also configures the network's output channels
     if cfg['arch'] != 'test':
@@ -2272,6 +2272,11 @@ def main():
                     args.no_bias,
                     params['conv_groups'],
                 )
+        print('after loading outputshift',params['output_shift'])
+       
+       # bias = [np.array([1]), np.array([1,0,0])]
+        print(bias)
+        print(output_shift)
     else:  # Get some hard-coded sample weights
         layers, weights, bias, output_shift, fc_weights, \
             fc_bias, input_channels, output_channels = \
