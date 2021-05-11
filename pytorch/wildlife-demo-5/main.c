@@ -464,8 +464,7 @@ int main(void)
     cnn_configure(); // Configure state machine
     cnn_start(); // Start CNN processing
     load_input(); // Load data input via FIFO
-    MXC_TMR_SW_Start(MXC_TMR0);
-
+    
     while (cnn_time == 0)
       __WFI(); // Wait for CNN
 
